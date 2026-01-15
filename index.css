@@ -7,37 +7,38 @@ html,body{
   height: 100%;
   width: 100%;
    background-image: url(https://i.pinimg.com/736x/e6/24/5f/e6245f3fd20a578d667c5ac5ac486335.jpg);
-  background-size: 100%;
+  background-size: cover;
+  background-attachment: fixed;
 }
 .main {
   width: 100%;
-  height: 100%;
- 
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+ flex-direction: column;
+  align-items: center;
  }
  .heading{
   font-weight: bolder;
- font-size: xx-large;
+ font-size: 2rem;
  font-family: sans-serif;
-  padding-top: 50px;
+  padding: 20px 0;
   color: rgb(237, 29, 140);
-  display: flex;
-  justify-content: center;
+  text-align: center;
  }
 .ToDo{
-  width: 75%;
+  width: 100%;
+  max-width: 800px;
   background-color: rgb(118, 193, 206);
   border: 1px solid  goldenrod;
   border-radius: 15px;
-  position: absolute;
- 
-  top:35%;
-  left: 150px;
-  /* transform: translate(-50%,-50%) */
+  padding-bottom: 20px;
+  margin-top: 60px;
 
 }
 .ToDo h2{
   text-align: center;
-  margin-top: 10px;
+  margin: 20px 0;
   color: #010a0e;
    letter-spacing: .15em;
   font-size: 1.8em;
@@ -46,21 +47,30 @@ html,body{
 .Todo_heading{
   margin: 20px;
   display: flex;
+  gap: 10px;
   color: #696e79;
-  justify-content: space-around;
+  justify-content: center;
+  flex-wrap: wrap ;
 }
 .enter_todo{
-  width: 50%;
-  height: 30px;
-  margin-right: 50px;
-  padding-right: 40px;
-  padding-left: 40px;
+  flex: 2;
+  min-width: 200px;
+  height: 40px;
+  padding: 0 15px;
   border: 1px solid aquamarine;
   border-radius: 10px;
 }
+.input-date {
+  flex: 1;
+  min-width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid aquamarine;
+  padding: 0 10px;
+}
 .btn-add{
-   margin-left:70px ;
    width: 100px;
+   height: 40px;
    cursor: pointer;
    color: green;
    font-weight: 700;
@@ -69,9 +79,16 @@ html,body{
    border-radius: 15px;
    
 }
+.todo-container {
+  width: 100%;
+  padding: 10px;
+}
 .to-list{
   display: flex;
-  margin-left: 50px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  gap: 10px;
   flex-wrap: wrap;
 
 }
@@ -80,56 +97,65 @@ html,body{
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
  font-weight: 400;
  font-size: large;
-  width: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 50px;
-  margin-left: 20px;
-  padding-left: 150px;
-  padding-right: 50px;
+ padding-left: 20px;
+ flex: 2;
+  min-width: 150px;
 
 }
 .todo-date{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 100px;
-  margin-left: 100px;
-  padding-left: 50px;
+  font-size: 1rem;
+  flex: 1;
+  min-width: 100px;
+  text-align: center;
 }
 .btn{
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 50px;
-  margin-top: 10px;
+  height: 35px;
+  padding: 0 15px;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 15px
 }
 #belete-button{
-   margin-left:50px ;
-   margin-bottom: 10px;
-   width: 100px;
-   cursor: pointer;
+  background-color: #ff4d4d;
+  border: 1px solid #b30000;
    color: rgb(213, 51, 7);
-   font-weight: 700;
-   background-color: darkorange;
-   border: 1px solid rgb(189, 5, 5) ;
-   border-radius: 15px;
+  
 }
 #done-button{
-  margin-left:5px ;
-   margin-bottom: 10px;
-   width: 75px;
-   cursor: pointer;
+  color: #115b05;
+  background-color: white;
+  border: 1px solid rgb(5, 105, 20);
    color: rgb(17, 91, 5);
-   font-weight: 700;
-   background-color: white;
-   border: 1px solid rgb(5, 105, 20) ;
-   border-radius: 15px;
 }
 .todo-list-click{
 text-decoration: line-through;
 color: #646870;
-font-weight: 500;
+opacity: 0.6;
+}
+@media (max-width: 600px) {
+  .ToDo {
+    width: 95%;
+  }
+
+  .Todo_heading {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .enter_todo, .input-date, .btn-add {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .to-list {
+    flex-direction: column;
+    text-align: center;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding-bottom: 15px;
+  }
+
+  .todo-list, .todo-date {
+    width: 100%;
+    margin: 5px 0;
+  }
 }
