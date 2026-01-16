@@ -146,6 +146,9 @@ opacity: 0.6;
     width: 100%;
     margin: 5px 0;
   }
+  .enter_todo, .input-date{
+   min-height: 40px;
+  }
 
   .to-list {
     flex-direction: column;
